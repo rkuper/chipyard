@@ -1,5 +1,7 @@
 bootrom/*
 docs/warnings.txt
+toolchains/*
+tools/*
 /Makefrag.pkgs
 target
 *.jar

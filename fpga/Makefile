@@ -112,7 +112,7 @@ $(synth_list_f): $(sim_common_files) $(all_vsrcs)
 
 BIT_FILE := $(build_dir)/obj/$(MODEL).bit
 $(BIT_FILE): $(synth_list_f)
-	cd $(build_dir); vivado \
+	cd $(build_dir); /tools/Xilinx/Vivado/2021.1/bin/vivado \
 		-nojournal -mode batch \
 		-source $(fpga_common_script_dir)/vivado.tcl \
 		-tclargs \
@@ -126,7 +126,7 @@ bitstream: $(BIT_FILE)
 
 .PHONY: debug-bitstream
 debug-bitstream: $(build_dir)/obj/post_synth.dcp
-	cd $(build_dir); vivado \
+	cd $(build_dir); /tools/Xilinx/Vivado/2021.1/bin/vivado \
 		-nojournal -mode batch \
 		-source $(sim_dir)/scripts/run_impl_bitstream.tcl \
 		-tclargs \
